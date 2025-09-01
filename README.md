@@ -8,7 +8,7 @@ It simulates a small enterprise environment with:
 - **Windows Server (Domain Controller + DHCP/DNS)**
 - **Windows 10 Client** (test machine)
 
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/bad93f68b6de5140f8ef998048ed8ae4969c0dc7/Diagram.png)
+![Fortigate.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/bad93f68b6de5140f8ef998048ed8ae4969c0dc7/Diagram.png)
 
 
 ## Lab Environment
@@ -33,7 +33,7 @@ It simulates a small enterprise environment with:
 - ✅ Basic Routing & NAT  
 - ✅ AD Integration (DHCP, DNS)  
 - ✅ Firewall Policies  
-- ✅ Web GUI access via `https://192.168.1.160
+- ✅ Web GUI access via `(192.168.1.160)
 
 ## Routing Interface
 - **WAN (port1)** → External switch (Internet access) (DHCP)
@@ -41,11 +41,11 @@ It simulates a small enterprise environment with:
 - **Domain Controller** → Provides DHCP & DNS
 - **Clients** → Get IP from DC, gateway = FortiGate (192.168.100.160)
 
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/b24b48a43adcef20341323ce9d86a73a6a13862b/configure-port.png)
+![configure-port.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/b24b48a43adcef20341323ce9d86a73a6a13862b/configure-port.png)
 
 ## LAN → WAN Firewall Policy
 
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/485781630222a7affd00da3a1c913dd980daa5fe/configure_firewall.png)
+![configure_firewall.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/485781630222a7affd00da3a1c913dd980daa5fe/configure_firewall.png)
 
 ## Fortigate Firewall Policy Control
 
@@ -56,23 +56,23 @@ It simulates a small enterprise environment with:
 ## Step 1 – Web Filtering
 
 **Screenshot:**
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/facebook.png)
+![facebook.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/facebook.png)
 
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/Web-Fliter.png)
+![Web-Fliter.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/Web-Fliter.png)
 
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/Instagram.png)
+![Instagram.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/Instagram.png)
 
 The below shows the log files from Fortigate with right source interface/IP from the security events
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/Event-Security.png)
+![Event-Security.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/Event-Security.png)
 
 ---
 
 ## Step 2 – Application Control
-Configuring the application Contorl 
+Configuring the application Control 
 
 **Screenshot:**
 
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/96dcfe6635367d5ce5c059aaca0c710725297f98/Application%20Control.png)
+![ApplicationControl.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/96dcfe6635367d5ce5c059aaca0c710725297f98/Application%20Control.png)
 
 ---
 
@@ -80,7 +80,7 @@ Configuring the application Contorl
 
 **Screenshot:**
 
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/96dcfe6635367d5ce5c059aaca0c710725297f98/IPS.png)
+![IPS.png.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/96dcfe6635367d5ce5c059aaca0c710725297f98/IPS.png)
 
 
 ---
@@ -91,13 +91,13 @@ Configuring the application Contorl
 
 - Final test was done on these machines to verify if all configuration are working, as you could see client machine was connected to the domain controller, although it was given a static IP address since it was just a test environment but both the domain and client machine are pointing to the fortigate as is gateway. I also tested with a statnd alone machine which wasn't joined to the domain to veriy also if my fortigate firewall can be applied to a standalone PC and to veriy if the gateway is also accessible.
 
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/7ba358b0108f0e8cd48c843faf8f8b7d7fa0b6ff/Domain%20Machine.png)
+![Domain%20Machine.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/7ba358b0108f0e8cd48c843faf8f8b7d7fa0b6ff/Domain%20Machine.png)
 
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/7ba358b0108f0e8cd48c843faf8f8b7d7fa0b6ff/Clent%20Machine.png)
+![Clent%20Machine](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/7ba358b0108f0e8cd48c843faf8f8b7d7fa0b6ff/Clent%20Machine.png)
 
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/7ba358b0108f0e8cd48c843faf8f8b7d7fa0b6ff/Stanalone%20Machine.png)
+![Stanalone%20Machine.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/7ba358b0108f0e8cd48c843faf8f8b7d7fa0b6ff/Stanalone%20Machine.png)
 
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/294a893f15ffb3194cf8192ba8a44b6202a3924a/Test-PC%20.png)
+![Test-PC%20.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/294a893f15ffb3194cf8192ba8a44b6202a3924a/Test-PC%20.png)
 
 ---
 
