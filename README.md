@@ -85,7 +85,10 @@ Configuring the application Contorl
 ## Step 4 – Verification
 - Confirm LAN → WAN policy has Security Profiles enabled.
 - Test browsing, applications, and IPS triggers from the client machine.
-- Include screenshots of blocked sites, blocked apps, and IPS logs.
+
+Final test was done on these machines to verify if all configuration are working
+
+
 
 ---
 
