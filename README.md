@@ -32,13 +32,16 @@ It simulates a small enterprise environment with:
 - ✅ Firewall Policies  
 - ✅ Web GUI access via `https://192.168.1.160
 
-## Routing in Fortigate
+## Routing Interface
 - **WAN (port1)** → External switch (Internet access)
 - **LAN (port2)** → Internal switch (AD + clients)
 - **Domain Controller** → Provides DHCP & DNS
 - **Clients** → Get IP from DC, gateway = FortiGate
 
 ![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/b24b48a43adcef20341323ce9d86a73a6a13862b/configure-port.png)
+
+## LAN → WAN Firewall Policy
+
 
 ## Fortigate Firewall Policy Control
 
