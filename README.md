@@ -86,9 +86,13 @@ Configuring the application Contorl
 - Confirm LAN → WAN policy has Security Profiles enabled.
 - Test browsing, applications, and IPS triggers from the client machine.
 
-Final test was done on these machines to verify if all configuration are working
+- Final test was done on these machines to verify if all configuration are working, as you could see client machine was connected to the domain controller, although it was given a static IP address since it was just a test environment but both the domain and client machine are pointing to the fortigate as is gateway. I also tested with a statnd alone machine which wasn't joined to the domain to veriy also if my fortigate firewall can be applied to a standalone PC and to veriy if the gateway is also accessible.
 
+![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/7ba358b0108f0e8cd48c843faf8f8b7d7fa0b6ff/Domain%20Machine.png)
 
+![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/7ba358b0108f0e8cd48c843faf8f8b7d7fa0b6ff/Clent%20Machine.png)
+
+![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/7ba358b0108f0e8cd48c843faf8f8b7d7fa0b6ff/Stanalone%20Machine.png)
 
 ---
 
