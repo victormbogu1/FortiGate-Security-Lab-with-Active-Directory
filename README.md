@@ -2,13 +2,14 @@
 A hands-on lab simulating an enterprise network environment with FortiGate firewall. Includes Web Filtering, Application Control, and Intrusion Prevention System (IPS). Demonstrates ability to secure client traffic and monitor network activity.
 
 ## Project Overview
-This lab simulates an enterprise network environment using a FortiGate firewall. Focused on:
+This project is a hands-on lab built in Hyper-V with **firewall, routing, and security concepts** using a FortiGate virtual appliance.  
+It simulates a small enterprise environment with:
+- **FortiGate Firewall** (LAN/WAN separation, NAT, policies)
+- **Windows Server (Domain Controller + DHCP/DNS)**
+- **Windows 10 Client** (test machine)
 
 ![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/bad93f68b6de5140f8ef998048ed8ae4969c0dc7/Diagram.png)
 
-- **Web Filtering:** Blocking websites by category or custom URLs.
-- **Application Control:** Controlling/blocking apps like P2P, Instant Messaging, and games.
-- **Intrusion Prevention System (IPS):** Detecting/blocking malicious traffic.
 
 ## Lab Environment
 - FortiGate VM
@@ -17,6 +18,33 @@ This lab simulates an enterprise network environment using a FortiGate firewall.
 - Hypervisor: Hyper-V
 
 ---
+## 🔧 Setup Steps
+1. Imported FortiGate `.vhd` into Hyper-V  
+2. Configured **two network adapters** (External = WAN, Internal = LAN)  
+3. Assigned LAN IP = `192.168.1.160`, WAN = external DHCP/Static  
+4. Disabled DHCP on FortiGate, kept DC as DHCP server  
+5. Added firewall policy (LAN → WAN, NAT enabled)  
+6. Verified Internet access from test VM through FortiGate
+
+## 🔐 Features Tested
+- ✅ Basic Routing & NAT  
+- ✅ AD Integration (DHCP, DNS)  
+- ✅ Firewall Policies  
+- ✅ Web GUI access via `https://192.168.1.160
+
+## Routing in Fortigate
+- **WAN (port1)** → External switch (Internet access)
+- **LAN (port2)** → Internal switch (AD + clients)
+- **Domain Controller** → Provides DHCP & DNS
+- **Clients** → Get IP from DC, gateway = FortiGate
+
+![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/bad93f68b6de5140f8ef998048ed8ae4969c0dc7/Diagram.png)
+
+## Fortigate Firewall Policy Control
+
+- **Web Filtering:** Blocking websites by category or custom URLs.
+- **Application Control:** Controlling/blocking apps like P2P, Instant Messaging, and games.
+- **Intrusion Prevention System (IPS):** Detecting/blocking malicious traffic.
 
 ## Step 1 – Web Filtering
 1. Go to `Security Profiles → Web Filter → Create New`.
