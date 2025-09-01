@@ -59,7 +59,7 @@ It simulates a small enterprise environment with:
 
 ![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/Instagram.png)
 
-The below shows the log files from Fortigate with right source interface/IP
+The below shows the log files from Fortigate with right source interface/IP from the security events
 ![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/Event-Security.png)
 
 ---
@@ -69,24 +69,16 @@ Configuring the application Contorl
 
 **Screenshot:**
 
+![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/96dcfe6635367d5ce5c059aaca0c710725297f98/Application%20Control.png)
+
 ---
 
 ## Step 3 – Intrusion Prevention System (IPS)
-1. Go to `Security Profiles → IPS → Create New`.
-2. Name the sensor `LAN-IPS`.
-3. Enable critical vulnerabilities:
-   - Malware
-   - Anomaly
-   - Optional: Botnet C&C (if available)
-4. Apply to LAN → WAN firewall policy under `Security Profiles → IPS`.
-5. Test using safe tools:
-   - [EICAR Test File](https://www.eicar.org/download-anti-malware-testfile/)
-   - Visit [testmyids.com](http://testmyids.com)
-6. Enable packet logging and status for visibility.
 
-**Screenshot Examples:**
-- `IPS/LAN-IPS_Profile.png`
-- `IPS/IPS_Logs_Screenshot.png`
+**Screenshot:**
+
+![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/96dcfe6635367d5ce5c059aaca0c710725297f98/IPS.png)
+
 
 ---
 
@@ -101,39 +93,4 @@ Configuring the application Contorl
 - SSL inspection requires FortiGate CA certificate installed on client machines for HTTPS filtering.
 - Deep Inspection may block legitimate traffic if clients don’t trust the certificate.
 
-Configurations/fortigate_cli_config.txt Example
-text
-Copy code
-# Interfaces
-config system interface
-    edit "port1"
-        set ip 192.168.7.187/24
-        set allowaccess ping https ssh
-        set type physical
-    next
-    edit "port2"
-        set ip 192.168.1.160/24
-        set allowaccess ping https ssh
-        set type physical
-    next
-end
 
-# LAN → WAN Firewall Policy
-config firewall policy
-    edit 1
-        set name "LAN-to-WAN"
-        set srcintf "port2"
-        set dstintf "port1"
-        set srcaddr "all"
-        set dstaddr "all"
-        set action accept
-        set schedule "always"
-        set service "ALL"
-        set nat enable
-        set utm-status enable
-        set webfilter-profile "LAN-WebFilter"
-        set application-list "LAN-AppControl"
-        set ips-sensor "LAN-IPS"
-        set ssl-ssh-profile "certificate-inspection"
-    next
-end
