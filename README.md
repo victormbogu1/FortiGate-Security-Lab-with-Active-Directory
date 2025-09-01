@@ -42,6 +42,7 @@ It simulates a small enterprise environment with:
 
 ## LAN → WAN Firewall Policy
 
+![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/485781630222a7affd00da3a1c913dd980daa5fe/configure_firewall.png)
 
 ## Fortigate Firewall Policy Control
 
