@@ -51,37 +51,23 @@ It simulates a small enterprise environment with:
 - **Intrusion Prevention System (IPS):** Detecting/blocking malicious traffic.
 
 ## Step 1 – Web Filtering
-1. Go to `Security Profiles → Web Filter → Create New`.
-2. Name the profile `LAN-WebFilter`.
-3. Enable categories to block:
-   - Social Media
-   - Streaming Media
-   - Adult Content
-4. Add custom URLs as needed.
-5. Apply profile to LAN → WAN firewall policy under `Security Profiles → Web Filter`.
-6. Test from client machine:
-   - Blocked sites: `facebook.com`, `instagram.com`.
 
-**Screenshot Examples:**
-- `WebFiltering/LAN-WebFilter_Profile.png`
-- `WebFiltering/SocialMediaBlocked.png`
+**Screenshot:**
+![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/facebook.png)
+
+![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/Web-Fliter.png)
+
+![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/Instagram.png)
+
+The below shows the log files from Fortigate with right source interface/IP
+![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/d364bd8601cf1813140b97d2677f7a0bb59c6d9d/Event-Security.png)
 
 ---
 
 ## Step 2 – Application Control
-1. Go to `Security Profiles → Application Control → Create New`.
-2. Name the profile `LAN-AppControl`.
-3. Enable categories to control/block:
-   - P2P/File Sharing
-   - Instant Messaging (WhatsApp Web, Telegram Web)
-   - Online Games
-4. Apply to LAN → WAN firewall policy under `Security Profiles → Application Control`.
-5. Test from client machine:
-   - WhatsApp Web, Telegram Web, or Steam should be blocked.
+Configuring the application Contorl 
 
-**Screenshot Examples:**
-- `ApplicationControl/LAN-AppControl_Profile.png`
-- `ApplicationControl/AppBlockedExamples.png`
+**Screenshot:**
 
 ---
 
