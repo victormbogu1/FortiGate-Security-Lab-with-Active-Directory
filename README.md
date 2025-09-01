@@ -4,6 +4,8 @@ A hands-on lab simulating an enterprise network environment with FortiGate firew
 ## Project Overview
 This lab simulates an enterprise network environment using a FortiGate firewall. Focused on:
 
+![Backup_Process.png](Backup_Process.png.jpeg)
+
 - **Web Filtering:** Blocking websites by category or custom URLs.
 - **Application Control:** Controlling/blocking apps like P2P, Instant Messaging, and games.
 - **Intrusion Prevention System (IPS):** Detecting/blocking malicious traffic.
