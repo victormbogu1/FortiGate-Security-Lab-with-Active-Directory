@@ -21,10 +21,13 @@ It simulates a small enterprise environment with:
 ## 🔧 Setup Steps
 1. Imported FortiGate `.vhd` into Hyper-V  
 2. Configured **two network adapters** (External = WAN, Internal = LAN)  
-3. Assigned LAN IP = `192.168.1.160`, WAN = external DHCP/Static  
-4. Disabled DHCP on FortiGate, kept DC as DHCP server  
-5. Added firewall policy (LAN → WAN, NAT enabled)  
-6. Verified Internet access from test VM through FortiGate
+3. Assigned LAN IP = `192.168.100.160`, WAN = external DHCP/Static  
+4. Disabled DHCP on FortiGate, kept DC as DHCP server
+5. Domain Machine - Static IP (192.168.100.1)
+6. Client Machine - Static IP (192.168.100.6)
+7. Standalone Test-PC Static IP (192.168.100.170)
+8. Added firewall policy (LAN → WAN, NAT enabled)  
+9. Verified Internet access from test VM through FortiGate
 
 ## 🔐 Features Tested
 - ✅ Basic Routing & NAT  
@@ -33,10 +36,10 @@ It simulates a small enterprise environment with:
 - ✅ Web GUI access via `https://192.168.1.160
 
 ## Routing Interface
-- **WAN (port1)** → External switch (Internet access)
-- **LAN (port2)** → Internal switch (AD + clients)
+- **WAN (port1)** → External switch (Internet access) (DHCP)
+- **LAN (port2)** → Internal switch (AD + clients) (192.168.100.160)
 - **Domain Controller** → Provides DHCP & DNS
-- **Clients** → Get IP from DC, gateway = FortiGate
+- **Clients** → Get IP from DC, gateway = FortiGate (192.168.100.160)
 
 ![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/b24b48a43adcef20341323ce9d86a73a6a13862b/configure-port.png)
 
@@ -93,6 +96,8 @@ Configuring the application Contorl
 ![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/7ba358b0108f0e8cd48c843faf8f8b7d7fa0b6ff/Clent%20Machine.png)
 
 ![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/7ba358b0108f0e8cd48c843faf8f8b7d7fa0b6ff/Stanalone%20Machine.png)
+
+![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/294a893f15ffb3194cf8192ba8a44b6202a3924a/Test-PC%20.png)
 
 ---
 
