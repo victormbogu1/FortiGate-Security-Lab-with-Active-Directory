@@ -38,7 +38,7 @@ It simulates a small enterprise environment with:
 - **Domain Controller** → Provides DHCP & DNS
 - **Clients** → Get IP from DC, gateway = FortiGate
 
-![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/bad93f68b6de5140f8ef998048ed8ae4969c0dc7/Diagram.png)
+![Backup_Process.png](https://github.com/victormbogu1/FortiGate-Security-Lab-with-Active-Directory/blob/b24b48a43adcef20341323ce9d86a73a6a13862b/configure-port.png)
 
 ## Fortigate Firewall Policy Control
 
